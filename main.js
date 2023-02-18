@@ -3,7 +3,7 @@ const vm = require('vm');
 
 function emojiEval(cmd, context, filename, callback) {
   const emojis = /\p{Extended_Pictographic}(\u200d\p{Extended_Pictographic})*/ug;
-  newCmd = cmd.replaceAll(emojis, (emoji) => `'${emoji}'`);
+  const newCmd = cmd.replaceAll(emojis, (emoji) => `'${emoji}'`);
 
   let result;
   try {
